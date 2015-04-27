@@ -1,0 +1,23 @@
+<h1>Movies</h1>
+
+<%= form_tag movies_index_path, method: :get do %>
+    <p>
+        <%= text_field_tag :term, params[:term] %>
+    </p>
+
+    <p class="button"><%= submit_tag "Search" %></p>
+<% end %>
+
+<% if @results %>
+
+    <% @results.each_with_index do |result, index| %>
+        <h2><%= index+1 %></h2>
+        <div>
+            <p>Track name: <%=result['trackName']%></p>
+            <p>Artist name: <%=result['artistName']%></p>
+            <p>Price: <%=result['trackPrice']%></p>
+            <p>Description: <%=result['shortDescription']%></p>
+        </div>
+    <% end %>
+
+<% end %>
