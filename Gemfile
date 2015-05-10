@@ -18,6 +18,8 @@ gem 'haml-rails'
 
 gem 'her'
 
+gem 'rails_12factor', group: :production
+
 group :doc do
   gem 'sdoc', '0.4.0'
 end
