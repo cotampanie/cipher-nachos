@@ -7,7 +7,8 @@ class MoviesController < ApplicationController
 
   def search
     if params[:term]
-      @movies = Itunes::Movie.search(params[:term])
+      @term = params[:term]
+      @movies = Itunes::Movie.search(@term)
       respond_to do |format|
         format.js
       end

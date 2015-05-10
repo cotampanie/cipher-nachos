@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6 }, allow_nil: true
 
   has_many :movies
+  has_and_belongs_to_many :notifications
 
   def authenticate(password)
     return false unless user = super(password)

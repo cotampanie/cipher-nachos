@@ -1,1 +1,8 @@
-%h2 No results
+%h2
+  No results for term:
+  %span= term
+
+%p
+  If you would like to receive notification when we will find results for this term click button:
+  #notify-me
+    = button_to 'Notify me', user_notifications_path(current_user.id), remote: true, method: :post, params: {term: term}, class: 'button radius'

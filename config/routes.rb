@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :movies
+    resources :notifications
   end
   resources :sessions
 

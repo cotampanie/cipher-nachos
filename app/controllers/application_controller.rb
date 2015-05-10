@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  helper_method :current_user, :current_user_movies
+  helper_method :current_user, :current_user_movies, :current_user_notifications
 
   def authenticate!
     unless session[:user_id]
@@ -17,4 +17,5 @@ class ApplicationController < ActionController::Base
   def current_user_movies
     @current_user_movies ||= current_user.movies
   end
+
 end

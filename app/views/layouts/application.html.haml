@@ -28,10 +28,25 @@
           %ul.right
             %li
               %a{href: '#'}
+                = link_to 'Notifications', user_notifications_url(current_user.id)
+            %li
+              %a{href: '#'}
                 = link_to 'Watchlist', root_url(current_user.id)
             %li
               = link_to 'Log out', log_out_url
-
-    = yield
+    .row
+      .small-12.columns
+        .movies-search
+          - if current_user
+            = form_tag movies_search_path, method: :get, remote: true, 'data-parsley-validate' => '' do
+              .row
+                .small-12.large-12.columns
+                  .row.collapse
+                    .small-8.medium-10.large-10.columns
+                      = text_field_tag :term, params[:term], placeholder: 'Movie title', required: ''
+                    .small-4.medium-2.large-2.columns
+                      = submit_tag 'Search', class: 'button postfix'
+        #content
+          = yield
 
     = javascript_include_tag "application"

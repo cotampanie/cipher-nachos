@@ -1,6 +1,6 @@
 - unless @movies.empty?
   :plain
-    $("#movies").html("#{escape_javascript(render partial: 'movies', locals: { movies: @movies })}");
+    $("#content").html("#{escape_javascript(render partial: 'movies', locals: { movies: @movies })}");
 - else
   :plain
-    $("#movies").html("#{escape_javascript(render partial: 'no_results')}");
+    $("#content").html("#{escape_javascript(render partial: 'no_results', locals: {term: @term})}");

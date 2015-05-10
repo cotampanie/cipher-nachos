@@ -1,0 +1,12 @@
+%h1 Notifications
+
+- unless @notifications.empty?
+  #notifications
+    - @notifications.each do |notification|
+      %row
+        .large-11.medium-11.small-10.columns= notification.term
+        .large-1.medium-1.small-2.columns
+          = link_to 'Delete', user_notification_path(current_user, notification), method: :delete
+- else
+  %p
+    You don't have notifications.
