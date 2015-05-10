@@ -1,0 +1,9 @@
+ul.parsley-errors-list {
+  margin-top: rem-calc(-15);
+  margin-left: 0;
+  list-style-type: none;
+  li {
+    color: #FF0000;
+    font-size: rem-calc(15);
+  }
+}

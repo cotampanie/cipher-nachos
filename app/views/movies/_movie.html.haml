@@ -1,0 +1,12 @@
+%li.movie{track_id: movie.track_id}
+  .photo
+    = image_tag movie.photo_url
+  .details
+    .title
+      = movie.track_name
+    .buttons
+      - in_watchlist = in_watchlist?(movie.track_id)
+      .add{class: ('hide' if in_watchlist)}
+        = button_to 'Add to watchlist', user_movies_url(current_user), remote: true, method: :post, params: {track_id: movie.track_id}
+      .remove{class: ('hide' unless in_watchlist)}
+        = button_to 'Remove from watchlist', user_movie_url(current_user, movie.track_id), remote: true, method: :delete

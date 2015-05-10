@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   validates :name, presence: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
+  has_many :movies
+
   def authenticate(password)
     return false unless user = super(password)
     user.create_token! if user.auth_token.nil?

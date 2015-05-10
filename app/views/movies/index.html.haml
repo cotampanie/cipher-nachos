@@ -1,0 +1,18 @@
+.row
+  .small-12.columns
+    .movies-search
+      = form_tag movies_search_path, method: :get, remote: true do
+        .row
+          .small-12.large-12.columns
+            .row.collapse
+              .small-8.medium-10.large-10.columns
+                = text_field_tag :term, params[:term], placeholder: 'Movie title'
+              .small-4.medium-2.large-2.columns
+                = submit_tag 'Search', class: 'button postfix'
+    #movies
+      %h2 Watchlist
+      - unless @movies.empty?
+        = render partial: 'movies', locals: { movies: @movies }
+      - else
+        %p
+          Your watchlist is empty. Search for your favorites movies and add them to your watchlist.

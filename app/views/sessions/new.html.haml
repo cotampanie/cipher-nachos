@@ -1,0 +1,20 @@
+.row
+  .small-9.small-centered.large-6.large-centered.columns
+    %h1 Log In
+    = form_tag sessions_path, 'data-parsley-validate' => '' do
+      - if flash[:error]
+        .alert-box.alert{'data-alert' => ''}
+          = flash[:error]
+          %a.close{href:'#'}
+            &times;
+      %label
+        Email
+        = text_field_tag :email, params[:email], required: '', 'data-parsley-type' => 'email'
+
+      %label
+        Password
+        = password_field_tag :password, nil, required: ''
+      %p
+        .right
+          = link_to 'Create account', sign_up_url
+        = submit_tag 'Log in', class: 'button radius'

@@ -1,0 +1,51 @@
+.movies-search {
+  margin-top: rem-calc(15);
+}
+
+#movies {
+  .movie {
+    .photo {
+      text-align: center;
+      border-radius: rem-calc(6) rem-calc(6) 0 0;
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
+    }
+    .details {
+      .title {
+        text-align: center;
+        color: #555;
+        padding: rem-calc(5) rem-calc(10);
+        font-size: rem-calc(15);
+      }
+      .buttons {
+        border-top: rem-calc(1) solid #e7e7e7;
+        padding: rem-calc(5) rem-calc(10);
+        text-align: center;
+        input[type=submit] {
+          background-color: transparent;
+          border: 0;
+          cursor: pointer;
+          color: #e7e7e7;
+        }
+        .add {
+          input[type=submit]:hover {
+            color: #008CBA;
+          }
+        }
+        .remove {
+          input[type=submit]:hover {
+            color: #e74c3c;
+          }
+        }
+      }
+      background-color: #fff;
+      border-radius: 0 0 rem-calc(6) rem-calc(6);
+      overflow: hidden;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.219608) 0px 1px 2px 0px;
+      -moz-box-shadow: rgba(0, 0, 0, 0.219608) 0px 1px 2px 0px;
+      box-shadow: rgba(0, 0, 0, 0.219608) 0px 1px 2px 0px;
+    }
+  }
+}

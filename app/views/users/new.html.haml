@@ -1,0 +1,26 @@
+.row
+  .small-9.small-centered.large-6.large-centered.columns
+    %h1 Sign Up
+    = form_for @user, html: {'data-parsley-validate' => ''} do |f|
+      - if @user.errors.any?
+        .alert-box.alert{'data-alert' => ''}
+          %ul
+            -for message in @user.errors.full_messages
+              %li= message
+
+      %label
+        Email
+        = f.text_field :email, required: '', 'data-parsley-type' => 'email'
+
+      %label
+        Name
+        = f.text_field :name, required: '', 'data-parsley-minlength' => 2
+
+      %label
+        Password
+        = f.password_field :password, required: '', 'data-parsley-minlength' => 6
+
+      %p
+        .right
+          = link_to 'Log in with existing account', log_in_url
+        = submit_tag 'Sign Up', class: 'button'

@@ -12,5 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require foundation/js/foundation.min
+//= require parsleyjs/dist/parsley.min
 //= require_tree .
+
+$(function(){ $(document).foundation(); });
