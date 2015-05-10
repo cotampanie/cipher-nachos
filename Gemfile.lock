@@ -44,6 +44,7 @@ GEM
     diff-lcs (1.2.5)
     erubis (2.7.0)
     eventmachine (1.0.3)
+    execjs (2.4.0)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.5.0)
@@ -173,6 +174,9 @@ GEM
       polyglot (>= 0.3.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    uglifier (2.7.1)
+      execjs (>= 0.3.0)
+      json (>= 1.8.0)
 
 PLATFORMS
   ruby
@@ -188,7 +192,7 @@ DEPENDENCIES
   her
   jbuilder (= 2.0)
   jquery-rails (= 2.0.2)
-  pg
+  pg (= 0.18.1)
   pry (= 0.10.1)
   rails (= 4.1.1)
   rails_12factor
@@ -201,3 +205,4 @@ DEPENDENCIES
   shoulda (= 3.5.0)
   spring
   thin (= 1.6.3)
+  uglifier
