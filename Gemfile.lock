@@ -80,6 +80,7 @@ GEM
     minitest (5.5.1)
     multi_json (1.11.0)
     multipart-post (2.0.0)
+    pg (0.18.1)
     polyglot (0.3.5)
     pry (0.10.1)
       coderay (~> 1.1.0)
@@ -155,7 +156,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
-    sqlite3 (1.3.10)
     thin (1.6.3)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0)
@@ -183,6 +183,7 @@ DEPENDENCIES
   her
   jbuilder (= 2.0)
   jquery-rails (= 2.0.2)
+  pg
   pry (= 0.10.1)
   rails (= 4.1.1)
   rspec (= 3.2.0)
@@ -193,5 +194,4 @@ DEPENDENCIES
   settingslogic (= 2.0.9)
   shoulda (= 3.5.0)
   spring
-  sqlite3 (= 1.3.10)
   thin (= 1.6.3)

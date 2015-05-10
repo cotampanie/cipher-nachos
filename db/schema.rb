@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150510143139) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "movies", force: true do |t|
     t.integer  "track_id"
     t.integer  "user_id"
@@ -31,8 +34,8 @@ ActiveRecord::Schema.define(version: 20150510143139) do
     t.integer "notification_id"
   end
 
-  add_index "notifications_users", ["notification_id"], name: "index_notifications_users_on_notification_id"
-  add_index "notifications_users", ["user_id"], name: "index_notifications_users_on_user_id"
+  add_index "notifications_users", ["notification_id"], name: "index_notifications_users_on_notification_id", using: :btree
+  add_index "notifications_users", ["user_id"], name: "index_notifications_users_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -43,7 +46,7 @@ ActiveRecord::Schema.define(version: 20150510143139) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["auth_token"], name: "index_users_on_auth_token"
-  add_index "users", ["email"], name: "index_users_on_email"
+  add_index "users", ["auth_token"], name: "index_users_on_auth_token", using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", using: :btree
 
 end
