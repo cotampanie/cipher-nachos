@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   get 'users/:user_id/movies' => 'movies#index', :as => :root
 
-  get '/', to: redirect('sessions/new')
+  get '/', to: 'main#index'
 end
